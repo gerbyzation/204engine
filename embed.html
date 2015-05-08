@@ -1,0 +1,283 @@
+<div ng-app="animationEngineApp"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script><div ng-view=""></div><script type="text/javascript">'use strict'; angular.module('animationEngineApp', ['ngRoute','engineDir','engine']).config(function ($routeProvider) { $routeProvider.when('/', { template: '<enginedir>Your browser doesnt seem to support HTML5</enginedir>', controller: 'MainCtrl', controllerAs: 'main' }).otherwise({ redirectTo: '/'});}); var engine = angular.module('engine', []);engine.service("assetsSvc", function () { "use strict";  var self = this; self.assets = [{"name":"watching_topgun","type":"image","src":"animation_images/watching_topgun.png","x":0,"y":0,"scale":100,"width":1240,"height":720,"effects":[{"type":"scale","from":{"scale":null},"to":{"scale":150},"startTime":100,"duration":5000,"$$hashKey":"object:104"}],"$$hashKey":"object:3"},{"name":"spritesheet","type":"spritesheet","src":"animation_images/watching_topgun_sprite.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"frames":8,"framesPerSecond":20,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":5000,"duration":1000,"$$hashKey":"object:118"}],"opacity":0,"$$hashKey":"object:4"},{"name":"without plane","type":"image","src":"animation_images/without_plane.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":8000,"duration":1000,"$$hashKey":"object:130"}],"opacity":0,"$$hashKey":"object:5"},{"name":"plane","type":"image","src":"animation_images/plane.png","x":0,"y":0,"scale":100,"width":189,"height":97,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":8000,"duration":1000,"$$hashKey":"object:142"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":580,"y":580},"startTime":8000,"duration":3000,"$$hashKey":"object:143"}],"opacity":0,"$$hashKey":"object:6"},{"name":"art of flight","type":"image","src":"animation_images/ART-OF-FLIGHT.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":11000,"duration":1000,"$$hashKey":"object:157"},{"type":"fade","from":{"opacity":null},"to":{"opacity":0},"startTime":15000,"duration":1000,"$$hashKey":"object:158"}],"opacity":0,"$$hashKey":"object:7"},{"name":"forest walk","type":"image","src":"animation_images/Forest.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":12000,"duration":1000,"$$hashKey":"object:172"},{"type":"fade","from":{"opacity":null},"to":{"opacity":0},"startTime":23000,"duration":1000,"$$hashKey":"object:173"}],"opacity":0,"$$hashKey":"object:8"},{"name":"walking weasel","type":"spritesheet","src":"animation_images/walking_weasels.png","x":0,"y":294,"scale":100,"width":300,"height":426,"frames":8,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":13000,"duration":1000,"$$hashKey":"object:189"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":1310,"y":294},"startTime":13000,"duration":5000,"$$hashKey":"object:190"},{"type":"fade","from":{"opacity":null},"to":{"opacity":0},"startTime":18000,"duration":1000,"$$hashKey":"object:191"}],"opacity":0,"$$hashKey":"object:9"},{"name":"weasel left","type":"spritesheet","src":"animation_images/walking_weaselsleft.png","x":980,"y":294,"scale":100,"width":300,"height":426,"frames":8,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":18000,"duration":1000,"$$hashKey":"object:209"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":-300,"y":294},"startTime":18000,"duration":5000,"$$hashKey":"object:210"}],"opacity":0,"$$hashKey":"object:10"},{"name":"forest close up","type":"image","src":"animation_images/Forest-Closeup.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":22000,"duration":1000,"$$hashKey":"object:224"},{"type":"fade","from":{"opacity":null},"to":{"opacity":0},"startTime":30000,"duration":1000,"$$hashKey":"object:225"}],"opacity":0,"$$hashKey":"object:11"},{"name":"look up","type":"image","src":"animation_images/looking_up.png","x":300,"y":200,"scale":100,"width":980,"height":520,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":26000,"duration":1000,"$$hashKey":"object:239"}],"opacity":0,"$$hashKey":"object:12"},{"name":"woodpecker1","type":"spritesheet","src":"animation_images/pecking_sprite.png","x":200,"y":315,"scale":100,"width":354,"height":353,"frames":4,"framesPerSecond":8,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":24000,"duration":1000,"$$hashKey":"object:253"},{"type":"fade","from":{"opacity":null},"to":{"opacity":0},"startTime":30000,"duration":1000,"$$hashKey":"object:254"}],"opacity":0,"$$hashKey":"object:13"},{"name":"forest for flying","type":"image","src":"animation_images/Forest-for-flying.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":30000,"duration":1000,"$$hashKey":"object:268"}],"opacity":0,"$$hashKey":"object:14"},{"name":"flying woody","type":"spritesheet","src":"animation_images/woodpecker_flying.png","x":900,"y":-130,"scale":100,"width":392,"height":392,"frames":6,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":31000,"duration":1000,"$$hashKey":"object:282"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":-500,"y":-130},"startTime":31000,"duration":8000,"$$hashKey":"object:283"}],"opacity":0,"$$hashKey":"object:15"},{"name":"jet eyes","type":"image","src":"animation_images/jet_eyes.png","x":300,"y":200,"scale":100,"width":980,"height":520,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":32000,"duration":1000,"$$hashKey":"object:297"}],"opacity":0,"$$hashKey":"object:16"},{"name":"forest flying 2","type":"image","src":"animation_images/Forest-for-flying.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":39000,"duration":1000,"$$hashKey":"object:309"},{"type":"fade","from":{"opacity":null},"to":{"opacity":null},"startTime":null,"duration":null,"$$hashKey":"object:310"}],"opacity":0,"$$hashKey":"object:17"},{"name":"woody right","type":"spritesheet","src":"animation_images/woodyright.png","x":0,"y":-130,"scale":100,"width":392,"height":392,"frames":6,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":39000,"duration":1000,"$$hashKey":"object:326"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":1320,"y":-130},"startTime":39000,"duration":8000,"$$hashKey":"object:327"}],"opacity":0,"$$hashKey":"object:18"},{"name":"weasel left 2","type":"spritesheet","src":"animation_images/walking_weaselsleft.png","x":980,"y":294,"scale":100,"width":300,"height":426,"frames":8,"framesPerSecond":20,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":39000,"duration":1000,"$$hashKey":"object:343"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":-300,"y":294},"startTime":39000,"duration":4000,"$$hashKey":"object:344"}],"opacity":0,"$$hashKey":"object:19"},{"name":"weasel right 2","type":"spritesheet","src":"animation_images/walking_weasels.png","x":0,"y":294,"scale":100,"width":300,"height":426,"frames":8,"framesPerSecond":20,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":43000,"duration":1000,"$$hashKey":"object:360"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":1310,"y":294},"startTime":43000,"duration":4000,"$$hashKey":"object:361"}],"opacity":0,"$$hashKey":"object:20"},{"name":"bluebird","type":"image","src":"animation_images/Blueprints.jpg","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":47000,"duration":3000,"$$hashKey":"object:375"}],"opacity":0,"$$hashKey":"object:21"},{"name":"home","type":"image","src":"animation_images/burrow.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":50000,"duration":1000,"$$hashKey":"object:387"}],"opacity":0,"$$hashKey":"object:22"},{"name":"scarf","type":"spritesheet","src":"animation_images/weasel_slo_mo.png","x":200,"y":220,"scale":100,"width":500,"height":500,"frames":12,"framesPerSecond":20,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":50000,"duration":1000,"$$hashKey":"object:401"}],"opacity":0,"$$hashKey":"object:23"},{"name":"forest1","type":"image","src":"animation_images/Forest.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":58000,"duration":1000,"$$hashKey":"object:413"}],"opacity":0,"$$hashKey":"object:24"},{"name":"Climbing","type":"spritesheet","src":"animation_images/climbing_tree.png","x":200,"y":325,"scale":100,"width":420,"height":420,"frames":4,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":58000,"duration":1000,"$$hashKey":"object:427"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":200,"y":100},"startTime":58000,"duration":4000,"$$hashKey":"object:428"}],"opacity":0,"$$hashKey":"object:25"},{"name":"Branch","type":"image","src":"animation_images/branch.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":61000,"duration":1000,"$$hashKey":"object:442"}],"opacity":0,"$$hashKey":"object:26"},{"name":"waiting","type":"spritesheet","src":"animation_images/weasel_slo_mo.png","x":50,"y":0,"scale":100,"width":500,"height":500,"frames":12,"framesPerSecond":5,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":61000,"duration":1000,"$$hashKey":"object:456"},{"type":"translate","from":{"x":null,"y":null},"to":{"x":-400,"y":200},"startTime":67700,"duration":800,"$$hashKey":"object:457"}],"opacity":0,"$$hashKey":"object:27"},{"name":"fly woody","type":"spritesheet","src":"animation_images/woodyright.png","x":-400,"y":300,"scale":100,"width":392,"height":392,"frames":6,"framesPerSecond":10,"effects":[{"type":"translate","from":{"x":null,"y":null},"to":{"x":1300,"y":300},"startTime":61000,"duration":4000,"$$hashKey":"object:473"}],"$$hashKey":"object:28"},{"name":"flywoody2","type":"spritesheet","src":"animation_images/woodpecker_flying.png","x":1300,"y":300,"scale":100,"width":392,"height":392,"frames":6,"framesPerSecond":10,"effects":[{"type":"translate","from":{"x":null,"y":null},"to":{"x":-400,"y":300},"startTime":64500,"duration":4000,"$$hashKey":"object:487"}],"$$hashKey":"object:29"},{"name":"cloudy forest","type":"image","src":"animation_images/Forest-for-flying.png","x":0,"y":0,"scale":100,"width":1280,"height":720,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":68000,"duration":1000,"$$hashKey":"object:499"}],"opacity":0,"$$hashKey":"object:30"},{"name":"woodyflyfly","type":"image","src":"animation_images/riding_woodpeckerright.png","x":-400,"y":300,"scale":100,"width":400,"height":200,"effects":[{"type":"translate","from":{"x":null,"y":null},"to":{"x":1320,"y":300},"startTime":68500,"duration":5000,"$$hashKey":"object:511"}],"$$hashKey":"object:31"},{"name":"woodyflyfly right","type":"image","src":"animation_images/Riding_Woodpecker.png","x":1320,"y":300,"scale":100,"width":400,"height":200,"effects":[{"type":"translate","from":{"x":null,"y":null},"to":{"x":-400,"y":300},"startTime":73000,"duration":5000,"$$hashKey":"object:523"}],"$$hashKey":"object:32"},{"name":"camera","type":"image","src":"animation_images/ManWithaCam.png","x":713,"y":172,"scale":100,"width":567,"height":548,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":78000,"duration":1000,"$$hashKey":"object:535"},{"type":"scale","from":{"scale":null},"to":{"scale":150},"startTime":79000,"duration":1000,"$$hashKey":"object:536"},{"type":"scale","from":{"scale":null},"to":{"scale":100},"startTime":80000,"duration":1000,"$$hashKey":"object:537"}],"opacity":0,"$$hashKey":"object:33"},{"name":"postcard","type":"image","src":"animation_images/Postcard.png","x":100,"y":100,"scale":0,"width":550,"height":554,"effects":[{"type":"fade","from":{"opacity":null},"to":{"opacity":1},"startTime":80000,"duration":1000,"$$hashKey":"object:553"},{"type":"rotate","from":{"rotation":null},"to":{"rotation":720},"startTime":81000,"duration":2000,"$$hashKey":"object:554"},{"type":"scale","from":{"scale":null},"to":{"scale":100},"startTime":81000,"duration":2000,"$$hashKey":"object:555"}],"opacity":0,"rotation":0,"$$hashKey":"object:34"},{"name":"voiceover1","type":"audio","src":"audio/Record_0008.wav","start":0,"playing":false,"$$hashKey":"object:35"},{"name":"voiceover2","type":"audio","src":"audio/Record_0000009.wav","start":9000,"playing":false,"$$hashKey":"object:36"},{"name":"voiceover3","type":"audio","src":"audio/Record_0000011.wav","start":13000,"playing":false,"$$hashKey":"object:37"},{"name":"voiceover4","type":"audio","src":"audio/Record_0012.wav","start":19000,"playing":false,"$$hashKey":"object:38"},{"name":"voiceover5","type":"audio","src":"audio/Record_0013.wav","start":27000,"playing":false,"$$hashKey":"object:39"},{"name":"voiceover6","type":"audio","src":"audio/Record_0014.wav","start":35000,"playing":false,"$$hashKey":"object:40"},{"name":"voiceover6","type":"audio","src":"audio/Record_0014.wav","start":35000,"playing":false,"$$hashKey":"object:41"},{"name":"voiceover7","type":"audio","src":"audio/Record_0015.wav","start":50000,"playing":false,"$$hashKey":"object:42"},{"name":"topgun","type":"audio","src":"audio/TOPGUNFINAL.mp3","start":50000,"playing":false,"$$hashKey":"object:43"},{"name":"voiceover9","type":"audio","src":"audio/Record_0018.wav","start":56000,"playing":false,"$$hashKey":"object:44"},{"name":"voiceover10","type":"audio","src":"audio/Record_0019.wav","start":68000,"playing":false,"$$hashKey":"object:45"},{"name":"voiceover11","type":"audio","src":"audio/Record_0020.wav","start":77000,"playing":false,"$$hashKey":"object:46"},{"name":"voiceover11","type":"audio","src":"audio/Record_0020.wav","start":77000,"playing":false,"$$hashKey":"object:47"},{"name":"voiceover12","type":"audio","src":"audio/camera.wav","start":80000,"playing":false,"$$hashKey":"object:48"}]; self.getAssets = function () { return angular.copy(self.assets); }; });angular.module('engineDir', []).directive('enginedir', [ function () {
+  'use strict';
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<canvas id="canvas" width="1280" height="720">Your browser doesn\'t seem to support HTML5 :(</canvas>'
+  };
+}]);engine.service('canvasSvc', ['assetsSvc', 'fx', 'time', function (assetsSvc, fx, time) {
+  'use strict';
+  var self = this;
+
+  // we're changing position, so need to get a copy, not reference!
+  var assets = null;
+  var canvas = null;
+  var context = null;
+
+  var width = 1240;
+  var height = 720;
+
+  // global vars
+  // need key-values so we can link images to asset props ^
+  var images = {};
+
+  var frameRequestId;
+
+  canvas = document.getElementById('canvas');
+  context = canvas.getContext('2d');
+
+  self.stop = function () {
+    cancelAnimationFrame(frameRequestId);
+    frameRequestId = null;
+  };
+
+  self.init = function (width, height) {
+    console.log('play');
+
+    // fi frameRequestId is set, stop request and reset value
+    if (frameRequestId) {
+      self.stop();
+    }
+
+    time.reset();
+
+    // DEEP COPY!
+    assets = angular.copy(assetsSvc.assets);
+    // console.log('assets', assets);
+
+
+    console.log(context);
+
+    width = width;
+    height = height;
+
+    console.log("width: " + width + " height: " + height);
+    // preload images
+    assets.forEach(function (asset) {
+      if (asset.type === 'image' || asset.type === 'spritesheet') {
+        // to implement:
+        // insert img tag in dom with angular when added, then load image from that source
+        images[asset.name] = new Image();
+        images[asset.name].src = asset.src;
+      } else if (asset.type === 'audio') {
+        // register the sound file with soundjs
+        console.log('loading audio');
+        asset.audio = new Audio(asset.src);
+        // asset.audio.load();
+      }
+    });
+
+    context.fillStyle = "#FFF";
+    context.fill();
+    context.clearRect(0, 0, width, height);
+
+    frameRequestId = requestAnimationFrame(self.drawFrame);
+  };
+
+  self.drawFrame = function (timestamp) {
+    // console.log('drawing new frame');
+
+      // set start time when animation starts
+      if (!time.startTime || time.startTime === null) {
+        time.startTime = timestamp;
+        time.currentTime = timestamp;
+        time.deltaTime = 0;
+        // console.log('resetting time!');
+      } else {
+        time.deltaTime = timestamp - time.currentTime;
+        // console.log(time.deltaTime, timestamp - time.currentTime);
+        time.currentTime = timestamp;
+      }
+
+      // calculate time elapsed
+      var timeElapsed = timestamp - time.startTime;
+
+      // clear canvas
+      context.clearRect(0, 0, width, height);
+
+      // UPDATE
+      // console.log("current assets passed :", assets);
+      assets.forEach(function (asset) {
+        if (asset.effects) {
+          asset.effects.forEach(function (effect) {
+            // check if effects function needs to be called
+            if (effect.startTime <= timeElapsed && (effect.startTime + effect.duration) > timeElapsed) {
+              // fx.translate(asset, effect, timeElapsed);
+              fx[effect.type](asset, effect, timeElapsed);
+            }
+          });
+        }
+      });
+
+      // DRAW
+      assets.forEach(function (asset) {
+        // calculate scaled width and height of asset as we need to know for rotation
+        var scaledWidth = asset.width * (asset.scale / 100);
+        var scaledHeight = asset.height * (asset.scale / 100);
+
+        // save the unrotated context of the canvas so we can restore it later
+        // the alternative is to untranslate & unrotate after drawing
+        context.save();
+
+        if (asset.opacity !== null){
+          context.globalAlpha = asset.opacity;
+        }
+
+        if (asset.rotation !== 0){
+
+          // calculate centre point of asset
+          var cx = asset.x + scaledWidth * 0.5;
+          var cy = asset.y + scaledHeight * 0.5;
+
+          // move to centre of asset
+          context.translate(cx, cy);
+
+          // rotate the canvas to the specified degrees
+          context.rotate(asset.rotation*Math.PI/180);
+
+          // move back to 0x0
+          context.translate(-cx, -cy);
+        }
+
+        switch (asset.type) {
+          case 'rect':
+            console.log(asset.x);
+            context.beginPath();
+            context.fillStyle = asset.fill;
+            context.rect(asset.x, asset.y, scaledWidth, scaledHeight);
+            context.fill();
+            context.closePath();
+            break;
+
+          case 'image':
+            context.drawImage(images[asset.name], asset.x, asset.y, scaledWidth, scaledHeight);
+            break;
+
+          case 'spritesheet':
+            self.drawSpriteSheet(asset, images[asset.name], timeElapsed);
+            break;
+
+          case 'audio':
+            if (timeElapsed > asset.start && !asset.playing ) {
+              self.playAudio(asset);
+            }
+        }
+
+        // we’re done with the rotating so restore the unrotated context
+        context.restore();
+
+      });
+
+      frameRequestId = requestAnimationFrame(self.drawFrame);
+  };
+
+  self.drawSpriteSheet = function (asset, image, timeElapsed) {
+    var frame = Math.floor(timeElapsed * asset.framesPerSecond / 1000);
+    if(frame >= asset.frames) {
+        frame = frame % asset.frames;
+    }
+
+    var sWidth = asset.width;
+    var sHeight = asset.height;
+
+    var x = frame * asset.width;
+    var dWidth = asset.width * (asset.scale / 100);
+    var dHeight = asset.height * (asset.scale / 100);
+
+    context.drawImage(image, x, 0, sWidth, sHeight, asset.x, asset.y, dWidth, dHeight);
+  };
+
+  self.playAudio = function (asset) {
+      // mark as playing to prevent further calls
+      console.log('play audio');
+      asset.playing = true;
+      asset.audio.play();
+  };
+
+}]);engine.service('fx', ['time', function (time) {
+  'use strict';
+
+  this.translate = function (asset, effect) {
+      // save start values x & y to calculate increments
+      if (typeof effect.from.x !== 'number' || effect.from.x === null) {
+          // console.log('set effect starting point');
+          effect.from.x = asset.x;
+          effect.from.y = asset.y;
+      }
+
+      // calculate delta per milisecond
+      var incX = (effect.to.x - effect.from.x) / effect.duration;
+      var incY = (effect.to.y - effect.from.y) / effect.duration;
+
+      // should do: new pos = current pos + (timeElapsedSinceLastDraw *incX)
+      // does: new pos = current pos + (timeElapsedSinceStart *incX)
+      asset.x = asset.x + (incX * time.deltaTime);
+      asset.y = asset.y + (incY * time.deltaTime);
+
+      // note to self: we're passing by reference here dummy, so just change obj properties :)
+  };
+
+  this.scale = function (asset, effect) {
+
+    if (typeof effect.from.scale !== 'number' || effect.from.scale === null) {
+      effect.from.scale = asset.scale;
+    }
+
+    var inc = (effect.to.scale - effect.from.scale) / effect.duration;
+    asset.scale = asset.scale + (inc * time.deltaTime);
+
+  };
+
+  this.rotate = function (asset, effect){
+
+    if (typeof effect.from.rotation !== 'number' || effect.from.rotation === null) {
+      effect.from.rotation = asset.rotation;
+    }
+
+    var degrees = (effect.to.rotation - effect.from.rotation) / effect.duration;
+    asset.rotation = asset.rotation + (degrees * time.deltaTime);
+
+  };
+
+  this.fade = function (asset, effect){
+
+    if (typeof effect.from.opacity !== 'number' || effect.from.opacity === null) {
+      effect.from.opacity = asset.opacity;
+    }
+
+    var inc = (effect.to.opacity - effect.from.opacity) / effect.duration;
+    asset.opacity = asset.opacity + (inc * time.deltaTime);
+
+  };
+}]);engine.service('time', function () {
+  'use strict';
+
+  var self = this;
+
+  self.startTime = null;
+  self.deltaTime = null;
+  self.currentTime = null;
+
+  self.reset = function () {
+    console.log('time reset!');
+    self.startTime = null;
+    self.deltaTime = null;
+    self.currentTime = null;
+  };
+});'use strict';
+
+angular.module('animationEngineApp')
+  .controller('MainCtrl', ['canvasSvc', function (canvasSvc) {
+
+    var self = this;
+
+    self.play = function () {
+        canvasSvc.init(1280, 720);
+    };
+
+    canvasSvc.init(1280, 720);
+
+    self.stop = function () {
+        canvasSvc.stop();
+    };
+}]);</script></div>
