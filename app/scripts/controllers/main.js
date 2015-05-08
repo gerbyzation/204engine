@@ -16,11 +16,15 @@ angular.module('animationEngineApp')
     self.assetSelected = null;
 
     self.play = function () {
-        canvasSvc.init(1280, 720);
+        canvasSvc.play();
     };
 
     self.stop = function () {
         canvasSvc.stop();
+    };
+
+    self.pause = function () {
+        canvasSvc.pause();
     };
 
     self.export = function () {

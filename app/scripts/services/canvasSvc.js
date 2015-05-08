@@ -22,6 +22,33 @@ engine.service('canvasSvc', ['assetsSvc', 'fx', 'time', function (assetsSvc, fx,
   self.stop = function () {
     cancelAnimationFrame(frameRequestId);
     frameRequestId = null;
+    time.reset();
+  };
+
+
+  self.pause = function () {
+    // if (!time.pause) {
+
+    if (!time.pause) {
+      cancelAnimationFrame(frameRequestId);
+      time.pause = true;
+      assets.forEach(function (asset) {
+        self.pauseAudio(asset);
+      });
+    } else if (time.pause) {
+      // time.previousFrame = timestamp;
+      frameRequestId = requestAnimationFrame(self.drawFrame);
+      time.pause = false;
+    }
+  };
+
+  self.play = function () {
+    if (time.pause) {
+      frameRequestId = requestAnimationFrame(self.drawFrame);
+      time.pause = false;
+    } else {
+      self.init(1280, 720);
+    }
   };
 
   self.init = function (width, height) {
@@ -71,19 +98,20 @@ engine.service('canvasSvc', ['assetsSvc', 'fx', 'time', function (assetsSvc, fx,
     // console.log('drawing new frame');
 
       // set start time when animation starts
-      if (!time.startTime || time.startTime === null) {
-        time.startTime = timestamp;
-        time.currentTime = timestamp;
-        time.deltaTime = 0;
-        // console.log('resetting time!');
-      } else {
-        time.deltaTime = timestamp - time.currentTime;
-        // console.log(time.deltaTime, timestamp - time.currentTime);
-        time.currentTime = timestamp;
-      }
+      // if (!time.startTime || time.startTime === null) {
+      //   time.startTime = timestamp;
+      //   time.currentTime = timestamp;
+      //   time.deltaTime = 0;
+      //   // console.log('resetting time!');
+      // } else {
+      //   time.deltaTime = timestamp - time.currentTime;
+      //   // console.log(time.deltaTime, timestamp - time.currentTime);
+      //   time.currentTime = timestamp;
+      // }
 
+      time.tick(timestamp);
       // calculate time elapsed
-      var timeElapsed = timestamp - time.startTime;
+      var timeElapsed = time.elapsed;
 
       // clear canvas
       context.clearRect(0, 0, width, height);
@@ -185,6 +213,11 @@ engine.service('canvasSvc', ['assetsSvc', 'fx', 'time', function (assetsSvc, fx,
       console.log('play audio');
       asset.playing = true;
       asset.audio.play();
+  };
+
+  self.pauseAudio = function (asset) {
+    asset.playing = false;
+    asset.audio.pause();
   };
 
 }]);

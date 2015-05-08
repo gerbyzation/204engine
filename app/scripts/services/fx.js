@@ -15,8 +15,8 @@ engine.service('fx', ['time', function (time) {
 
       // should do: new pos = current pos + (timeElapsedSinceLastDraw *incX)
       // does: new pos = current pos + (timeElapsedSinceStart *incX)
-      asset.x = asset.x + (incX * time.deltaTime);
-      asset.y = asset.y + (incY * time.deltaTime);
+      asset.x = asset.x + (incX * time.elapsed);
+      asset.y = asset.y + (incY * time.elapsed);
 
       // note to self: we're passing by reference here dummy, so just change obj properties :)
   };
@@ -28,7 +28,7 @@ engine.service('fx', ['time', function (time) {
     }
 
     var inc = (effect.to.scale - effect.from.scale) / effect.duration;
-    asset.scale = asset.scale + (inc * time.deltaTime);
+    asset.scale = asset.scale + (inc * time.elapsed);
 
   };
 
@@ -39,7 +39,7 @@ engine.service('fx', ['time', function (time) {
     }
 
     var degrees = (effect.to.rotation - effect.from.rotation) / effect.duration;
-    asset.rotation = asset.rotation + (degrees * time.deltaTime);
+    asset.rotation = asset.rotation + (degrees * time.elapsed);
 
   };
 
@@ -50,7 +50,7 @@ engine.service('fx', ['time', function (time) {
     }
 
     var inc = (effect.to.opacity - effect.from.opacity) / effect.duration;
-    asset.opacity = asset.opacity + (inc * time.deltaTime);
+    asset.opacity = asset.opacity + (inc * time.elapsed);
 
   };
 }]);
