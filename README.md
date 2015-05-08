@@ -6,6 +6,7 @@ version 0.11.1.
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
+Don't forget to run npm/bower install when running for the first time.
 
 NOTE: for the export functionality you need to run `node server.js` instead of `grunt serve`. You might want to run grunt in parallel if you are developing.
 
