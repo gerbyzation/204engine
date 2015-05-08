@@ -16,3 +16,15 @@ To make use of the export button you need to run the node server instead (`node 
 # Routes
  - `/` for the animation engine
  - `/embed.html` for our sample animation exported into an indepentend html file (images have to be placed in the proper path relative to the file)
+
+## Embedding
+You can export an animation from the engine, which will give you a html document with the html element in it. Place it on your website, make sure the assets are placed relative to the html & enjoy!
+
+# Future wishlist
+- pause functionality (see `pause` branch, only needs bugfixing)
+- easing: linear, curves
+- visualising translation paths & manipulate points by dragging (also bezier curves!) + multiple points
+- z-index
+- change asset order by drag & drop
+- reflect effect
+- add scenes or groups for the assets
