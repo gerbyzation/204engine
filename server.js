@@ -54,7 +54,7 @@ app.post('/export', function (req, res) {
       var assets2 = '; self.getAssets = function () { return angular.copy(self.assets); }; });';
       var appjs = "'use strict'; angular.module('animationEngineApp', ['ngRoute','engineDir','engine']).config(function ($routeProvider) { $routeProvider.when('/', { template: '<enginedir>Your browser doesnt seem to support HTML5</enginedir>', controller: 'MainCtrl', controllerAs: 'main' }).otherwise({ redirectTo: '/'});}); var engine = angular.module('engine', []);";
 
-      html = '<div ng-app="animationEngineApp"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script><script src="bower_components/angular-route/angular-route.js"></script><div ng-view=""></div><script type="text/javascript">';
+      html = '<div ng-app="animationEngineApp"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script><div ng-view=""></div><script type="text/javascript">';
       html += appjs;
       var assetsSvc = assets + data + assets2;
       html += assetsSvc;
