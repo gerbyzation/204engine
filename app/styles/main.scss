@@ -127,12 +127,11 @@ a:hover{
     text-align: left;
 }
 
-#effectHeading{
+.effectHeading{
     background-color: #888888;
 }
 
-#effectHeading > .panel-body.collapse{
-
+.effectHeading + .panel-body{
     background-color: #888888;
 }
 
@@ -140,110 +139,29 @@ a:hover{
     background-color: #888888;
 }
 
-#effectHeading > .panel-title{
+.effectHeading > .panel-title{
     width:80px;
     float:left;
 }
 
-// html,as
-// body {
-//   width: 100vw;
-//   height: 100vh;
-// }
+.collapse-button,
+.delete img {
+    float: right;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
 
-// body {
-//   padding: 0;
-// }
+.asset-heading > .collapse-button, 
+.asset-heading > .delete img {
+    top: -40px;
+    margin-right: 5px;
+}
 
-// .panel {
-  // background-color: #333;
-// }
+.effectHeading {
+    height: 40px;
+}
 
-// .panel {
-//   border: 2px solid #777;
-//   overflow: hidden;
-// }
-
-// .panel-fx {
-//   float: right;
-// }
-
-// #canvas {
-//   border: 1px solid black;
-// }
-
-// /* Everything but the jumbotron gets side spacing for mobile first views */
-// .header,
-// .marketing,
-// .footer {
-//   padding-left: 15px;
-//   padding-right: 15px;
-// }
-
-// /* Custom page header */
-// .header {
-//   border-bottom: 1px solid #e5e5e5;
-//   margin-bottom: 10px;
-
-//   /* Make the masthead heading the same height as the navigation */
-//   h3 {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     line-height: 40px;
-//     padding-bottom: 19px;
-//   }
-// }
-
-// /* Custom page footer */
-// .footer {
-//   padding-top: 19px;
-//   color: #777;
-//   border-top: 1px solid #e5e5e5;
-// }
-
-// .container-narrow > hr {
-//   margin: 30px 0;
-// }
-
-// /* Main marketing message and sign up button */
-// .jumbotron {
-//   text-align: center;
-//   border-bottom: 1px solid #e5e5e5;
-
-//   .btn {
-//     font-size: 21px;
-//     padding: 14px 24px;
-//   }
-// }
-
-// /* Supporting marketing content */
-// .marketing {
-//   margin: 40px 0;
-
-//   p + h4 {
-//     margin-top: 28px;
-//   }
-// }
-
-// /* Responsive: Portrait tablets and up */
-// @media screen and (min-width: 768px) {
-//   .container {
-//     max-width: 730px;
-//   }
-
-//   /* Remove the padding we set earlier */
-//   .header,
-//   .marketing,
-//   .footer {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-//   /* Space out the masthead */
-//   .header {
-//     margin-bottom: 30px;
-//   }
-//   /* Remove the bottom border on the jumbotron for visual effect */
-//   .jumbotron {
-//     border-bottom: 0;
-//   }
-// }
+.panel .effectHeading .delete img {
+    top: -5px;
+}

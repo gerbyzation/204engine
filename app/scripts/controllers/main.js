@@ -190,6 +190,8 @@ angular.module('animationEngineApp')
             scale: 100,
             width: canvas.width,
             height: canvas.height,
+            rotation: 0,
+            opacity: 1,
             effects: []
         },
         image: {
@@ -201,6 +203,8 @@ angular.module('animationEngineApp')
             scale: 100,
             width: 100,
             height: 100,
+            rotation: 0,
+            opacity: 1,
             effects: []
         },
         spritesheet: {
@@ -212,6 +216,8 @@ angular.module('animationEngineApp')
             scale: 100,
             width: 100,
             height: 100,
+            rotation: 0,
+            opacity: 1,
             frames: 9,
             framesPerSecond:1,
             effects: []
