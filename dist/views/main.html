@@ -1,0 +1,24 @@
+<!-- <div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.8cb970fb.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+ --> <div class="row"> <div class="col-lg-4"> <div class="panel panel-default"> <div class="panel-heading"> <h1 class="panel-title">Asset properties</h1> </div> <!-- panel-heading --> <!-- List Assets --> <div class="panel-group"> <div class="panel panel-default" ng-repeat="asset in main.assets"> <div class="panel-heading"> <h4 class="panel-title"> {{ asset.name }} </h4> <a class="delete" ng-click="main.deleteAsset($index)">Delete</a> </div> <!-- panel-heading --> <div class="panel-body"> <p><strong>Type: </strong>{{ asset.type }}</p> <img ng-src="{{ asset.src }}" ng-if="asset.type === 'image'"> <div class="form-group" ng-if="asset.type === 'rect'"> <label>fill (hex):</label> <input type="text" ng-model="asset.fill"> </div> <div class="form-group"> <input type="text" ng-model="asset.src"> </div> <div class="form-group"> <label>Width</label> <input type="number" ng-model="asset.width"> </div> <div class="form-group"> <label>Height</label> <input type="number" ng-model="asset.height"> </div> <div class="form-group"> <label>X:</label> <input type="number" ng-model="asset.x"> </div> <div class="form-group"> <label>Y:</label> <input type="number" ng-model="asset.y"> </div> <div class="panel-group"> <div class="panel panel-default" ng-repeat="effect in asset.effects"> <div class="panel-heading"> <h4 class="panel-title"> <p data-toggle="collapse" ng-href="#{{ effect.type + $index }}" aria-expanded="false" aria-controls="{{ effect.type + $index }}">{{ effect.type }}</p> </h4> <a class="delete" ng-click="main.deleteEffect($parent.$index, $index)">Delete</a> </div> <div class="panel-body collapse" id="{{ effect.type + $index }}"> <!-- TRANSLATE --> <ul class="list-group" ng-if="effect.type == 'translate'"> <li class="list-group-item"> <label>From:</label> <div class="input-group"> <span class="input-group-addon" id="basic-addon1">x</span> <input type="number" ng-model="effect.from.x"> <span class="input-group-addon" id="basic-addon1">y</span> <input type="number" ng-model="effect.from.y"> </div> </li> <li class="list-group-item"> <label>To:</label> <div class="input-group"> <span class="input-group-addon" id="basic-addon1">x</span> <input type="number" ng-model="effect.to.x"> <span class="input-group-addon" id="basic-addon1">y</span> <input type="number" ng-model="effect.to.y"> </div> </li> <li class="list-group-item"> <label>Start:</label> <input type="number" ng-model="effect.startTime"> </li> <li class="list-group-item"> <label>Duration:</label> <input type="number" ng-model="effect.duration"> </li> </ul> </div> </div> <!-- {{ asset }} --> </div> <!-- .panel-body --> </div> <!-- .panel --> </div> <!-- .panel-group --> <!-- <p>{{ effect }}</p> --> </div> </div> </div> <div class="col-lg-6 panel"> <canvas id="canvas" width="1000" height="1000"></canvas> <code><pre> {{ main.assets }}</pre></code> <div><p> index selected asset: {{ main.assetSelected}} </p></div> </div> <div class="col-lg-2 panel panel-fx"> <h1>Right column</h1> <div class="form-group"> <label>Select Asset to affect:</label> <select ng-options="index as asset.name for (index, asset) in main.assets" ng-model="main.fxIndex"></select> <a class="btn btn-primary" ng-click="main.addTranslate(main.fxIndex, 5000, 1000, 100, 100)">Add Effect</a> </div> <div class="form-group"> <label>Add new asset:</label> <select ng-options="key for (key, value) in main.templates" ng-model="main.assetSelected">{{ key }}</select> <a class="btn btn-primary" ng-click="main.addAsset()">Add Asset</a> </div> <a class="btn btn-warning" ng-click="main.play()">PLAAAYYYY</a> </div> </div>
